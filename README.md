@@ -24,7 +24,7 @@ Parsing the input is a two step process with functions createCommandList() </br>
 and createCommandArg(). The former uses the latter to build its structure. </br> </br>
 
 # Parsing the user's input
-The parsing process for each user input follows 3 distinct steps.
+The parsing process for each user input follows three distinct steps:
 1. **Separating the commands in the case of a pipline.** </br>
 Since the input could contain multiple commands piped together we store </br>
 the commands in a struct that contains a struct containting the info of </br>
@@ -46,15 +46,15 @@ the array of char pointers. This array of char pointers is then added to the </b
 commandLineArg() struct. </br></br>
 
 # Checking for background jobs
-Since our shell's behavior will substancially change if its executing a </br>
-background process, we check for this right before we parse the input. The </br>
+Since the shell's behavior will substancially change if its executing a </br>
+background process, it checks for this right before it parses the input. The </br>
 implementation simply checks the last token of the input for an ampersand </br>
 symbol. If one is detected it replaces the symbol with a "" and returns 1, </br>
 otherwise it returns 0. The removal of the symbol is done since it's only </br>
 there to notify the shell it wants to be run in the background. </br> </br>
 
 # Built in commands
-Now that the command has been parsed, we run it through the built in </br>
+Now that the command has been parsed, it'll run through the built in </br>
 commands (exit, cd, etc) since the work involved with those is specific. </br>
 If none of those commands match, we then fork() to create a child process </br>
 for our pipeline. </br> </br>
