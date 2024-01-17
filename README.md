@@ -16,10 +16,10 @@ The implementation of this program goes through 5 distinct steps for each input:
 
 
 # Printing the prompt
-Our implementation of a basic shell starts with a simple loop which prints </br>
-a prompt and takes in input. This input is stored in a variable, cmd. We </br>
-then check for a few edge cases such as no input being given before we </br>
-parse the input. </br> </br>
+The implementation of a basic shell starts with a simple loop which prints </br>
+a prompt and takes in input. This input is stored in a variable, cmd. It </br>
+then checks for a few edge cases such as no input being given before it </br>
+parses the input. </br> </br>
 Parsing the input is a two step process with functions createCommandList() </br>
 and createCommandArg(). The former uses the latter to build its structure. </br> </br>
 
@@ -56,8 +56,8 @@ there to notify the shell it wants to be run in the background. </br> </br>
 # Built in commands
 Now that the command has been parsed, it'll run through the built in </br>
 commands (exit, cd, etc) since the work involved with those is specific. </br>
-If none of those commands match, we then fork() to create a child process </br>
-for our pipeline. </br> </br>
+If none of those commands match, it then fork() to create a child process </br>
+for the pipeline. </br> </br>
 
 # The Pipeline process
 ## Forking the main process
